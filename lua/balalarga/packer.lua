@@ -11,16 +11,13 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
-	use { 
-		'ellisonleao/gruvbox.nvim',
-		config = function ()
-			vim.cmd('colorscheme gruvbox')
-		end
-	}
-	-- use { 'rose-pine/neovim' } -- one more nice schema
+	use { 'ellisonleao/gruvbox.nvim' }
+	use { 'rose-pine/neovim' } -- one more nice schema
 	use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
 	use { 'mbbill/undotree' }
 	use { 'tpope/vim-fugitive' }
+	use { 'Civitasv/cmake-tools.nvim',
+		requires = { {'nvim-lua/plenary.nvim'} } }
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',

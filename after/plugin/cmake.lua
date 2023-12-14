@@ -2,11 +2,11 @@ local cmake = require("cmake-tools")
 
 vim.keymap.set("n", "<C-b>", vim.cmd.CMakeBuild)
 
-
 cmake.setup {
+  lsp_type = "clangd",
   cmake_command = "cmake", -- this is used to specify cmake command path
   cmake_regenerate_on_save = true, -- auto generate when save CMakeLists.txt
-  cmake_generate_options = { "-D CMAKE_EXPORT_COMPILE_COMMANDS=1 -G Ninja -A x64" }, -- this will be passed when invoke `CMakeGenerate`
+  cmake_generate_options = { "-GNinja", "-DCMAKE_EXPORT_COMPILE_COMMANDS=1", "-DCMAKE_C_COMPILER=clang", "-DCMAKE_CXX_COMPILER=clang++" },
   cmake_build_options = {}, -- this will be passed when invoke `CMakeBuild`
   -- support macro expansion:
   --       ${kit}
@@ -50,7 +50,7 @@ cmake.setup {
       name = "Main Terminal",
       prefix_name = "[CMakeTools]: ", -- This must be included and must be unique, otherwise the terminals will not work. Do not use a simple spacebar " ", or any generic name
       split_direction = "horizontal", -- "horizontal", "vertical"
-      split_size = 6,
+      split_size = 4,
 
       -- Window handling
       single_terminal_per_instance = true, -- Single viewport, multiple windows

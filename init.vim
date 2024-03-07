@@ -7,7 +7,7 @@ Plug 'mbbill/undotree'
 Plug 'rose-pine/neovim'
 Plug 'Civitasv/cmake-tools.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'neovim/nvim-lspconfig'
@@ -44,6 +44,7 @@ set termguicolors
 
 set updatetime=50
 
+set signcolumn=yes
 set colorcolumn=120
 
 set undodir=.undodir
@@ -76,11 +77,15 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 let mapleader = " "
 inoremap <c-c> <esc>
+nnoremap <c-c> :wq<cr>
+vnoremap <c-c> <esc>
+" Saving file
+noremap <c-s> :w<cr>
 noremap <leader>/ :set hlsearch!<cr>
 " Pressing the letter o will open a new line below the current one.
 " Exit insert mode after creating a new line above or below the current line.
-nnoremap o o<esc>
-nnoremap O O<esc>
+"nnoremap o o<esc>
+"nnoremap O O<esc>
 
 " Resize split windows using arrow keys by pressing:
 " CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
@@ -89,12 +94,33 @@ noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
+
+" Move lines anymode
+nnoremap <silent><a-j> :m .+1<cr>==
+nnoremap <silent><a-k> :m .-2<cr>==
+inoremap <silent><a-j> <esc>:m b+1<cr>==gi
+inoremap <silent><a-k> <esc>:m .-2<cr>==gi
+vnoremap <silent><a-j> :m '>+1<cr>gv=gv
+vnoremap <silent><a-k> :m '<-2<cr>gv=gv
+map L $
+map H ^
+
+" Search/replace word under cursor
+noremap <c-f> :%s/\<<c-r><c-w>\>/<c-r><c-w>/gI<left><left><left>
+
+" NerdTree
 noremap <c-n> :NERDTreeToggle<cr>
 " Have nerdtree ignore certain files and directories.
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
 
+" Undotree
+nnoremap <leader>u :UndotreeFocus<cr>
+
+" Color scheme
 colorscheme gruvbox
 
+
+" Commands
 
 " You can split a window into sections by typing `:split` or `:vsplit`.
 " Display cursorline and cursorcolumn ONLY in active window.
@@ -103,3 +129,4 @@ augroup cursor_off
     autocmd WinLeave * set nocursorline
     autocmd WinEnter * set cursorline
 augroup END
+

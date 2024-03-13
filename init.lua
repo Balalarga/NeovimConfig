@@ -1,2 +1,3 @@
-require('balalarga')
+require('config')
+require('plugins')
 

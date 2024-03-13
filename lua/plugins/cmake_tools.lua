@@ -1,4 +1,10 @@
-local cmake = require("cmake-tools")
+return {
+    "Civitasv/cmake-tools.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim"
+    },
+    config = function()
+        local cmake = require("cmake-tools")
 
 vim.keymap.set("n", "<C-b>", vim.cmd.CMakeBuild)
 
@@ -69,4 +75,6 @@ cmake.setup {
     spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }, -- icons used for progress display
     refresh_rate_ms = 100, -- how often to iterate icons
   },
+}
+    end,
 }

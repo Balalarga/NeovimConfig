@@ -20,6 +20,8 @@ local plugins = {
 	require('plugins.lazygit'),
 	require('plugins.which_key'),
 	require('plugins.undotree'),
+	require('plugins.conform'),
+	require('plugins.lualine'),
 }
 
 

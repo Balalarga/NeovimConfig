@@ -22,7 +22,9 @@ local plugins = {
 	require('plugins.undotree'),
 	require('plugins.conform'),
 	require('plugins.lualine'),
+	require('plugins.nvim_tree'),
 }
 
 
 require('lazy').setup(plugins)
+

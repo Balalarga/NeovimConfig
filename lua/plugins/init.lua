@@ -16,13 +16,19 @@ local plugins = {
 	require('plugins.telescope'),
 	require('plugins.treesitter'),
 	require('plugins.colorscheme'),
-	require('plugins.nvim_lsp'),
 	require('plugins.lazygit'),
 	require('plugins.which_key'),
 	require('plugins.undotree'),
 	require('plugins.conform'),
 	require('plugins.lualine'),
 	require('plugins.nvim_tree'),
+	require('plugins.cmake_tools'),
+	require('plugins.nvim_notify'),
+	require('plugins.autopairs'),
+	require('plugins.autocmp'),
+	require('plugins.lsps'),
+    -- Need to setup somehow
+	--require('plugins.neoscroll_nvim'),
 }
 
 

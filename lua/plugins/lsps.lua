@@ -15,7 +15,7 @@ return { -- LSP Configuration & Plugins
         { 'folke/neodev.nvim', opts = {} },
     },
     config = function()
-        vim.keymap.set({'n', 'i', 'v'}, "<F4>", "<cmd> ClangdSwitchSourceHeader <CR>")
+        vim.keymap.set({ 'n', 'i', 'v' }, "<F4>", "<cmd> ClangdSwitchSourceHeader <CR>")
 
         -- Brief Aside: **What is LSP?**
         --
@@ -196,4 +196,3 @@ return { -- LSP Configuration & Plugins
         }
     end,
 }
-

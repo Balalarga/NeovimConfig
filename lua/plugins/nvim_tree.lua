@@ -1,6 +1,6 @@
 return {
     "nvim-tree/nvim-tree.lua",
-    opts = function ()
+    opts = function()
         vim.keymap.set('n', '<C-n>', "<cmd>:NvimTreeFocus<cr>")
         return {
             view = {

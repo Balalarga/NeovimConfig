@@ -26,6 +26,9 @@ vim.keymap.set('n', '<C-f>', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz', { desc = 'Center cursor after moving down half-page' })
 vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz', { desc = 'Center cursor after moving up half-page' })
 
+vim.keymap.set({ 'n', 'v' }, '<A-j>', 'j<C-e>', { desc = 'Move cursor down with screen' })
+vim.keymap.set({ 'n', 'v' }, '<A-k>', 'k<C-y>', { desc = 'Move cursor up with screen' })
+
 vim.keymap.set('n', '<Up>', '<cmd>:winc +<cr>')
 vim.keymap.set('n', '<Down>', '<cmd>:winc -<cr>')
 vim.keymap.set('n', '<Left>', '<cmd>:winc <<cr>')

@@ -27,6 +27,7 @@ local plugins = {
     require('plugins.autopairs'),
     require('plugins.autocmp'),
     require('plugins.lsps'),
+    require('plugins.vimbegood'),
     -- Need to setup somehow
     --require('plugins.neoscroll_nvim'),
 }

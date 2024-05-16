@@ -8,11 +8,6 @@ vim.keymap.set('n', '<C-c>', '<cmd>:q<cr>')
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 
-vim.keymap.set('', '<C-h>', '<cmd>:winc h<cr>')
-vim.keymap.set('', '<C-j>', '<cmd>:winc j<cr>')
-vim.keymap.set('', '<C-k>', '<cmd>:winc k<cr>')
-vim.keymap.set('', '<C-l>', '<cmd>:winc l<cr>')
-
 vim.keymap.set('', '<C-d>', '<C-d>zz')
 vim.keymap.set('', '<C-u>', '<C-u>zz')
 

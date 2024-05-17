@@ -94,16 +94,12 @@ noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
-
-" Move lines anymode
-nnoremap <silent><a-j> :m .+1<cr>==
-nnoremap <silent><a-k> :m .-2<cr>==
-inoremap <silent><a-j> <esc>:m b+1<cr>==gi
-inoremap <silent><a-k> <esc>:m .-2<cr>==gi
-vnoremap <silent><a-j> :m '>+1<cr>gv=gv
-vnoremap <silent><a-k> :m '<-2<cr>gv=gv
 map L $
 map H ^
+map <a-j> <c-e><cr>
+map <a-k> kk<c-y><cr>
+
+xnoremap p pgvy
 
 " Search/replace word under cursor
 noremap <c-f> :%s/\<<c-r><c-w>\>/<c-r><c-w>/gI<left><left><left>

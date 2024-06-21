@@ -28,6 +28,8 @@ vim.opt.backup = false
 
 vim.opt.cursorline = true
 
+-- Global buffer
+vim.opt.clipboard = "unnamed"
 
 -- Using custom tree eg. nvim-tree
 vim.g.loaded_netrw = 1

@@ -17,8 +17,11 @@ vim.keymap.set('', '<S-h>', '_')
 vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz', { desc = 'Center cursor after moving down half-page' })
 vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz', { desc = 'Center cursor after moving up half-page' })
 
-vim.keymap.set({ 'n', 'v' }, '<A-j>', 'j<C-e>', { desc = 'Move cursor down with screen' })
-vim.keymap.set({ 'n', 'v' }, '<A-k>', 'k<C-y>', { desc = 'Move cursor up with screen' })
+vim.keymap.set({ 'x' }, 'p', 'pgvy', { desc = 'Disable replace after put' })
+vim.keymap.set({ 'n', 'v' }, '<C-f>', ':%s/\\<<c-r><c-w>\\>/<c-r><c-w>/gI<left><left><left>', { desc = 'Replace' })
+
+vim.keymap.set({ 'n', 'v' }, '<A-j>', '3<C-e>3j', { desc = 'Move cursor down with screen' })
+vim.keymap.set({ 'n', 'v' }, '<A-k>', '3<C-y>3k', { desc = 'Move cursor up with screen' })
 
 vim.keymap.set('n', '<Up>', '<cmd>:winc +<cr>')
 vim.keymap.set('n', '<Down>', '<cmd>:winc -<cr>')

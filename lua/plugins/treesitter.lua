@@ -4,7 +4,7 @@ return {
     opts = {
         ensure_installed = { 'bash', 'c', 'json', 'lua', 'markdown', 'vim', 'vimdoc' },
         -- Autoinstall languages that are not installed
-        auto_install = true,
+        auto_install = false,
         highlight = { enable = true },
         indent = { enable = true },
     },

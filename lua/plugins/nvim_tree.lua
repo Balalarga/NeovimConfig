@@ -1,10 +1,10 @@
 return {
     "nvim-tree/nvim-tree.lua",
     opts = function()
-        vim.keymap.set('n', '<C-n>', "<cmd>:NvimTreeFocus<cr>")
+        vim.keymap.set('n', '<C-n>', "<cmd>:NvimTreeToggle<cr>")
         return {
             view = {
-                width = 40,
+                width = 30,
             },
             renderer = {
                 group_empty = true,

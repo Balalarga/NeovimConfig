@@ -8,21 +8,21 @@ return {
         vim.keymap.set('n', '<F5>', '<cmd>:CMakeRun<cr>')
 
         return {
-            lsp_type = "clangd",
-            cmake_command = "cmake",         -- this is used to specify cmake command path
-            cmake_regenerate_on_save = true, -- auto generate when save CMakeLists.txt
-            cmake_generate_options = {
-                '-G"Ninja Multi-Config"',
-                '-DCMAKE_EXPORT_COMPILE_COMMANDS=1',
-            },
-            cmake_build_options = {}, -- this will be passed when invoke `CMakeBuild`
+            cmake_command = "cmake",                                                                    -- this is used to specify cmake command path
+            ctest_command = "ctest",                                                                    -- this is used to specify ctest command path
+            cmake_use_preset = true,
+            cmake_regenerate_on_save = true,                                                            -- auto generate when save CMakeLists.txt
+            cmake_generate_options = { '-G"Ninja Multi-Config"', "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" }, -- this will be passed when invoke `CMakeGenerate`
+            cmake_build_options = {},                                                                   -- this will be passed when invoke `CMakeBuild`
             -- support macro expansion:
             --       ${kit}
             --       ${kitGenerator}
             --       ${variant:xx}
-            cmake_build_directory = "Build",             -- this is used to specify generate directory for cmake, allows macro expansion
-            cmake_soft_link_compile_commands = false,    -- this will automatically make a soft link from compile commands file to project root dir
-            cmake_compile_commands_from_lsp = true,      -- this will automatically set compile commands file location using lsp, to use it, please set `cmake_soft_link_compile_commands` to false
+            cmake_build_directory = function()
+                return "Build/${variant:buildType}"
+            end,                                         -- this is used to specify generate directory for cmake, allows macro expansion, can be a string or a function returning the string, relative to cwd.
+            cmake_soft_link_compile_commands = true,     -- this will automatically make a soft link from compile commands file to project root dir
+            cmake_compile_commands_from_lsp = false,     -- this will automatically set compile commands file location using lsp, to use it, please set `cmake_soft_link_compile_commands` to false
             cmake_kits_path = nil,                       -- this is used to specify global cmake kits path, see CMakeKits for detailed usage
             cmake_variants_message = {
                 short = { show = true },                 -- whether to show short message
@@ -43,7 +43,7 @@ return {
                     quickfix = {
                         show = "always",                -- "always", "only_on_error"
                         position = "belowright",        -- "vertical", "horizontal", "leftabove", "aboveleft", "rightbelow", "belowright", "topleft", "botright", use `:h vertical` for example to see help on them
-                        size = 4,
+                        size = 10,
                         encoding = "utf-8",             -- if encoding is not "utf-8", it will be converted to "utf-8" using `vim.fn.iconv`
                         auto_close_when_success = true, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
                     },
@@ -51,6 +51,7 @@ return {
                         direction = "float",   -- 'vertical' | 'horizontal' | 'tab' | 'float'
                         close_on_exit = false, -- whether close the terminal when exit
                         auto_scroll = true,    -- whether auto scroll to the bottom
+                        singleton = true,      -- single instance, autocloses the opened one, if present
                     },
                     overseer = {
                         new_task_opts = {
@@ -71,7 +72,7 @@ return {
                         name = "Main Terminal",
                         prefix_name = "[CMakeTools]: ", -- This must be included and must be unique, otherwise the terminals will not work. Do not use a simple spacebar " ", or any generic name
                         split_direction = "horizontal", -- "horizontal", "vertical"
-                        split_size = 4,
+                        split_size = 11,
 
                         -- Window handling
                         single_terminal_per_instance = true,  -- Single viewport, multiple windows
@@ -92,7 +93,7 @@ return {
                     quickfix = {
                         show = "always",         -- "always", "only_on_error"
                         position = "belowright", -- "bottom", "top"
-                        size = 4,
+                        size = 10,
                         encoding = "utf-8",
                         auto_close_when_success = true, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
                     },
@@ -100,6 +101,7 @@ return {
                         direction = "float",   -- 'vertical' | 'horizontal' | 'tab' | 'float'
                         close_on_exit = false, -- whether close the terminal when exit
                         auto_scroll = true,    -- whether auto scroll to the bottom
+                        singleton = true,      -- single instance, autocloses the opened one, if present
                     },
                     overseer = {
                         new_task_opts = {
@@ -117,7 +119,7 @@ return {
                         name = "Main Terminal",
                         prefix_name = "[CMakeTools]: ", -- This must be included and must be unique, otherwise the terminals will not work. Do not use a simple spacebar " ", or any generic name
                         split_direction = "horizontal", -- "horizontal", "vertical"
-                        split_size = 4,
+                        split_size = 11,
 
                         -- Window handling
                         single_terminal_per_instance = true,  -- Single viewport, multiple windows
@@ -137,6 +139,7 @@ return {
                 spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }, -- icons used for progress display
                 refresh_rate_ms = 100, -- how often to iterate icons
             },
+            cmake_virtual_text_support = true, -- Show the target related to current file using virtual text (at right corner)
         }
     end,
 }

@@ -12,6 +12,9 @@ vim.opt.expandtab = true
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+-- Use them together
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
 

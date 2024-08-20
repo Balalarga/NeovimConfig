@@ -3,7 +3,7 @@ return {
     opts = {
         mappings = { 'zt', 'zz', 'zb' },
     },
-    config = function()
+    config = function(_, opts)
         require('neoscroll').setup(opts)
         -- Syntax: mappings[keys] = {function, {function arguments}}
         local mappings    = {}

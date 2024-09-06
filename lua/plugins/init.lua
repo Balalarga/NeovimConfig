@@ -29,8 +29,11 @@ local plugins = {
     require('plugins.lsps'),
     require('plugins.vimbegood'),
     require('plugins.togglterm'),
+    require('plugins.log_highlighter'),
+    require('plugins.overseer'),
+    -- require('plugins.obsidian'),
     -- Need to setup somehow
-    --require('plugins.neoscroll_nvim'),
+    -- require('plugins.neoscroll_nvim'),
 }
 
 

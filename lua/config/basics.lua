@@ -33,3 +33,6 @@ vim.opt.cursorline = true
 
 -- Global buffer
 vim.opt.clipboard = "unnamed"
+
+-- ^M line ending
+vim.opt.fileformats = "dos"

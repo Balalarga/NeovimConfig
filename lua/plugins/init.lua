@@ -17,7 +17,7 @@ local plugins = {
     require('plugins.treesitter'),
     require('plugins.colorscheme'),
     require('plugins.lazygit'),
-    require('plugins.which_key'),
+    -- require('plugins.which_key'),
     require('plugins.undotree'),
     require('plugins.conform'),
     require('plugins.lualine'),
@@ -31,9 +31,6 @@ local plugins = {
     require('plugins.togglterm'),
     require('plugins.log_highlighter'),
     require('plugins.overseer'),
-    -- require('plugins.obsidian'),
-    -- Need to setup somehow
-    -- require('plugins.neoscroll_nvim'),
 }
 
 

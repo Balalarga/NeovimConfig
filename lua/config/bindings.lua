@@ -29,8 +29,10 @@ vim.keymap.set('n', '<Left>', '<cmd>:winc <<cr>')
 vim.keymap.set('n', '<Right>', '<cmd>:winc ><cr>')
 
 vim.keymap.set({ '' }, '<leader>h', '<cmd>:set hlsearch!<cr>', { desc = 'Toggle search highlighting' })
-vim.keymap.set({ '' }, '*', '<cmd>:set hlsearch<cr>*', { desc = 'Toggle search highlighting' })
-vim.keymap.set({ '' }, '#', '<cmd>:set hlsearch<cr>#', { desc = 'Toggle search highlighting' })
+vim.keymap.set({ '' }, '*', '<cmd>:set hlsearch<cr>*')
+vim.keymap.set({ '' }, '#', '<cmd>:set hlsearch<cr>#')
+vim.keymap.set({ '' }, 'n', 'nzz')
+vim.keymap.set({ '' }, 'N', 'Nzz')
 
 
 -- Diagnostic keymaps

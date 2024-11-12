@@ -17,20 +17,21 @@ local plugins = {
     require('plugins.treesitter'),
     require('plugins.colorscheme'),
     require('plugins.lazygit'),
-    -- require('plugins.which_key'),
     require('plugins.undotree'),
     require('plugins.conform'),
     require('plugins.lualine'),
     require('plugins.nvim_tree'),
-    -- require('plugins.cmake_tools'),
-    -- require('plugins.nvim_notify'),
     require('plugins.autopairs'),
     require('plugins.autocmp'),
     require('plugins.lsps'),
     require('plugins.vimbegood'),
+    require('plugins.cmake_tools'),
+
+    -- require('plugins.overseer'),
+    -- require('plugins.which_key'),
+    -- require('plugins.nvim_notify'),
     -- require('plugins.togglterm'),
     -- require('plugins.log_highlighter'),
-    -- require('plugins.overseer'),
 }
 
 

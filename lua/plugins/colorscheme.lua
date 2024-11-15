@@ -1,5 +1,9 @@
 return {
     "rose-pine/neovim",
+    dependencies = {
+        "folke/tokyonight.nvim",
+        "catppuccin/nvim",
+    },
     config = function()
         require('rose-pine').setup({
             styles = {

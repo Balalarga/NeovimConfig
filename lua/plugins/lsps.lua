@@ -153,7 +153,6 @@ return { -- LSP Configuration & Plugins
             -- But for many setups, the LSP (`tsserver`) will work just fine
             -- tsserver = {},
             --
-
             lua_ls = {
                 -- cmd = {...},
                 -- filetypes { ...},
@@ -185,9 +184,9 @@ return { -- LSP Configuration & Plugins
             'stylua', -- Used to format lua code
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+        require('lspconfig').clangd.setup{}
         require('lspconfig').zls.setup {
             -- Server-specific settings. See `:help lspconfig-setup`
-
             -- omit the following line if `zls` is in your PATH
             cmd = { 'zls' },
             -- There are two ways to set config options:

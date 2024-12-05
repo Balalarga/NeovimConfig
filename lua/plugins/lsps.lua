@@ -195,12 +195,12 @@ return { -- LSP Configuration & Plugins
             --
             -- Further information on how to configure ZLS:
             -- https://github.com/zigtools/zls/wiki/Configuration
-            settings = {
-                zls = {
-                    -- omit the following line if `zig` is in your PATH
-                    zig_exe_path = 'zig',
-                }
-            }
+            -- settings = {
+            --     zls = {
+            --         -- omit the following line if `zig` is in your PATH
+            --         zig_exe_path = 'zig',
+            --     }
+            -- }
         }
 
         require('mason-lspconfig').setup {

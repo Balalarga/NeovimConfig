@@ -11,8 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require('lazy').setup({
+    checker = {
+        enabled = false, -- Disables automatic checking for updates
+        -- notify = false, -- Optional: if 'enabled' is true, this prevents the notification popup
+    },
 
-local plugins = {
     require('plugins.telescope'),
     require('plugins.treesitter'),
     require('plugins.colorscheme'),
@@ -32,7 +36,4 @@ local plugins = {
     -- require('plugins.nvim_notify'),
     -- require('plugins.togglterm'),
     -- require('plugins.log_highlighter'),
-}
-
-
-require('lazy').setup(plugins)
+})

@@ -43,3 +43,5 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 
 vim.keymap.set('t', '<C-c>', '<C-\\><C-n>')
+
+vim.keymap.set("n", "<C-t>", "<cmd>Telescope buffers<CR>")

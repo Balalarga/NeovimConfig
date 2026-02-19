@@ -187,7 +187,6 @@ return { -- LSP Configuration & Plugins
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
         local lspconfig = require('lspconfig')
         lspconfig.clangd.setup{}
-        lspconfig["lua-language-server"].setup{}
         lspconfig.zls.setup {
             -- Server-specific settings. See `:help lspconfig-setup`
             -- omit the following line if `zls` is in your PATH

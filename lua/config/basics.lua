@@ -36,3 +36,9 @@ vim.opt.clipboard = "unnamed"
 
 -- ^M line ending
 vim.opt.fileformats = "dos"
+
+if vim.fn.executable('pwsh') == 1 then
+  vim.o.shell = 'pwsh'
+elseif vim.fn.executable('powershell') == 1 then
+  vim.o.shell = 'powershell'
+end

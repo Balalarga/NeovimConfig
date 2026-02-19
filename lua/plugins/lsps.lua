@@ -167,6 +167,7 @@ return { -- LSP Configuration & Plugins
                     },
                 },
             },
+            zls = {},
         }
 
         -- Ensure the servers and tools above are installed
@@ -184,8 +185,10 @@ return { -- LSP Configuration & Plugins
             'stylua', -- Used to format lua code
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-        require('lspconfig').clangd.setup{}
-        require('lspconfig').zls.setup {
+        local lspconfig = require('lspconfig')
+        lspconfig.clangd.setup{}
+        lspconfig["lua-language-server"].setup{}
+        lspconfig.zls.setup {
             -- Server-specific settings. See `:help lspconfig-setup`
             -- omit the following line if `zls` is in your PATH
             cmd = { 'zls' },
@@ -211,7 +214,7 @@ return { -- LSP Configuration & Plugins
                     -- by the server configuration above. Useful when disabling
                     -- certain features of an LSP (for example, turning off formatting for tsserver)
                     server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-                    require('lspconfig')[server_name].setup(server)
+                    lspconfig[server_name].setup(server)
                 end,
             },
         }

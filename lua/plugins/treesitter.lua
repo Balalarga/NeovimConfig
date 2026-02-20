@@ -1,24 +1,43 @@
 return {
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
     build = ':TSUpdate',
-    opts = {
-        ensure_installed = { 'bash', 'c', 'json', 'lua', 'markdown', 'vim', 'vimdoc' },
-        -- Autoinstall languages that are not installed
-        auto_install = false,
-        highlight = { enable = true },
-        indent = { enable = true },
-    },
     config = function(_, opts)
-        -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-
-        ---@diagnostic disable-next-line: missing-fields
-        require('nvim-treesitter.configs').setup(opts)
-
-        -- There are additional nvim-treesitter modules that you can use to interact
-        -- with nvim-treesitter. You should go explore a few and see what interests you:
-        --
-        --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-        --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-        --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+        -- IMPORTANT: require the configs module, not just 'nvim-treesitter'
+        require("nvim-treesitter.configs").setup(opts)
     end,
+    opts = {
+        -- A list of parser names or tiers to always install
+        ensure_installed = {
+            "c",
+            "cpp",
+            "cmake",
+            "glsl",
+            "csv",
+            "gitignore",
+            "gitattributes",
+            "gitcommit",
+            "go",
+            "ini",
+            -- "json5",
+            "json",
+            "lua",
+            "python",
+            "toml",
+            "yaml",
+            "xml",
+            "vim",
+            "vimdoc",
+            "markdown",
+            "markdown_inline",
+            "javascript",
+            "zig",
+        },
+        auto_install = true, -- Automatically install missing parsers when entering buffer
+        highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false,
+        },
+        indent = { enable = true },
+    }
 }

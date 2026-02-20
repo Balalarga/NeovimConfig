@@ -1,7 +1,7 @@
 return {
-    'stevearc/overseer.nvim',
-    opts = {
-        templates = { "builtin", "cmake.generate" },
-
-    },
+    -- 'stevearc/overseer.nvim',
+    -- opts = {
+    --     templates = { "builtin", "cmake.generate" },
+    --
+    -- },
 }

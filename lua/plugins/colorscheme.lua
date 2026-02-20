@@ -1,8 +1,8 @@
 return {
-    "rose-pine/neovim",
+    "catppuccin/nvim",
     dependencies = {
+        "rose-pine/neovim",
         "folke/tokyonight.nvim",
-        "catppuccin/nvim",
     },
     config = function()
         require('rose-pine').setup({
@@ -10,6 +10,6 @@ return {
                 transparency = true,
             }
         })
-        vim.cmd([[colorscheme rose-pine-moon]])
+        vim.cmd([[colorscheme catppuccin-mocha]])
     end,
 }

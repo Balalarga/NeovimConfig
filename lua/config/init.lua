@@ -1,4 +1,4 @@
 require('config.bindings')
-require('config.basics')
+require('config.options')
 require('config.autocmd')
 require('config.term')

@@ -42,3 +42,5 @@ if vim.fn.executable('pwsh') == 1 then
 elseif vim.fn.executable('powershell') == 1 then
   vim.o.shell = 'powershell'
 end
+
+vim.g.langmap = 'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz'

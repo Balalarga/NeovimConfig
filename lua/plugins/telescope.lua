@@ -6,6 +6,41 @@ return { -- Fuzzy Finder (files, lsp, etc)
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
     config = function()
+        require('telescope').setup{
+            pickers = {
+                help_tags = {
+                    theme = "ivy"
+                },
+                keymaps = {
+                    theme = "ivy"
+                },
+                find_files = {
+                    theme = "ivy"
+                },
+                builtin = {
+                    theme = "ivy"
+                },
+                grep_string = {
+                    theme = "ivy"
+                },
+                live_grep = {
+                    theme = "ivy"
+                },
+                diagnostics = {
+                    theme = "ivy"
+                },
+                resume = {
+                    theme = "ivy"
+                },
+                oldfiles = {
+                    theme = "ivy"
+                },
+                buffers = {
+                    theme = "ivy"
+                },
+            }
+        }
+
         local builtin = require 'telescope.builtin'
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[S]earch [H]elp' })
         vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })

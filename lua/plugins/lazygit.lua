@@ -1,5 +1,5 @@
 
-vim.keymap.set('n', '<leader>gl', ':LazyGit<CR>')
+vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>')
 
 return {
     "kdheepak/lazygit.nvim",

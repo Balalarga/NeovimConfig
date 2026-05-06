@@ -38,6 +38,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
                 buffers = {
                     theme = "ivy"
                 },
+                current_buffer_fuzzy_find = {
+                    theme = "ivy"
+                },
             }
         }
 
